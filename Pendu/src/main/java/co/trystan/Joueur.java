@@ -1,16 +1,14 @@
 package co.trystan;
 
-import java.util.Scanner;
-
 public class Joueur {
     
     String nom;
-    int point;
+    //int point;
 
 //CONSTRUCTOR
 
     public Joueur() {
-        this.point = 0;
+       // this.point = 0;
     }
 
 //METHOD
@@ -20,8 +18,8 @@ public void creationNom(String entreeScan) {
     this.nom = entreeScan;
 }
 
-public void score() {
+//public void score() {
     
-} 
+//} 
 
 }

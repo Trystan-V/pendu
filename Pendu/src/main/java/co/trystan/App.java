@@ -17,7 +17,9 @@ public final class App {
     Jeu jeu = new Jeu();
     jeu.leNomDuJoueur();
     jeu.debut();
-    jeu.corpDuJeu();
+    jeu.choixDuMot();
+    jeu.masquageDuMot();
+    jeu.tableauPourComparer();
     jeu.choisirUneLettre(); 
     jeu.jouerUneLettre();
     jeu.recommencer();

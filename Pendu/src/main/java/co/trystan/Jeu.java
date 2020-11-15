@@ -2,10 +2,11 @@ package co.trystan;
 
 import java.util.Arrays;
 import java.util.Scanner;
+import java.util.Random;
 
 public class Jeu {
 
-    String[] motADeviner = {"ninja", "shuriken"};
+    String[] motADeviner = {"ninja", "shuriken", "ninjustsu"};
     String[] motCache;
     String[] pourComparer;
     String entrerUneLettre;
@@ -30,12 +31,29 @@ public class Jeu {
         System.out.println("Bienvenue à vous " + joueur1.nom + " !");
     }
 
-    public void corpDuJeu() {
+    public String choixDuMot() {
+        this.random = new Random().nextInt(motADeviner.length);
+        return motADeviner[random];
+    }  
+    
+    // 
+
+    public void masquageDuMot() {
+        motCache = this.choixDuMot().split("");
+        //System.out.println(Arrays.toString(motCache));
+
+        System.out.println("Voici le mot mystère :");
+
+        for (int i = 0; i < motCache.length; i++) {
+            motCache[i] = "_";
+        }
+        System.out.println(Arrays.toString(motCache));
         
-        Mot jeu = new Mot();
-        jeu.choixDuMot();
-        jeu.masquageDuMot();
-        jeu.tableauPourComparer();
+    }
+
+    public void tableauPourComparer() {
+        pourComparer = this.motADeviner[random].split("");
+        //System.out.println(Arrays.toString(pourComparer));
     }
 
     public String choisirUneLettre(){
@@ -61,12 +79,17 @@ public class Jeu {
             
         }
         if( bonneReponse == false) {
-            System.out.println("Looser");
+            System.out.println("C'est raté !");
             this.pVRestant--;
                 if(pVRestant == 0){
                     System.out.println("PENDU");
+                    System.out.println("");
+                    System.out.println("|  DEAD  |");
+                    System.out.println("|  X  X  |");
+                    System.out.println("|  ----  |");
+                    
                 }else{
-                    System.out.println("plus que " + this.pVRestant + ". Choisissez une autre lettre :");
+                    System.out.println("plus que " + this.pVRestant + " pv. Choisissez une autre lettre :");
                 }
         }
     }

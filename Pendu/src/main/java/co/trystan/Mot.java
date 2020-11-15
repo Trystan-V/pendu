@@ -11,7 +11,7 @@ public class Mot {
 
     //tirage au sort du mot
     public Mot() {
-        
+
     }
 
     public String choixDuMot() {
@@ -23,7 +23,7 @@ public class Mot {
 
     public void masquageDuMot() {
         motCache = this.choixDuMot().split("");
-        System.out.println(Arrays.toString(motCache));
+        //System.out.println(Arrays.toString(motCache));
 
         System.out.println("Voici le mot mystère :");
 
@@ -36,6 +36,6 @@ public class Mot {
 
     public void tableauPourComparer() {
         pourComparer = this.motADeviner[random].split("");
-        System.out.println(Arrays.toString(pourComparer));
+        //System.out.println(Arrays.toString(pourComparer));
     }
 }
