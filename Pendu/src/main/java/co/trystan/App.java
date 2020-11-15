@@ -1,5 +1,6 @@
 package co.trystan;
 
+
 /**
  * Hello world!
  */
@@ -12,6 +13,17 @@ public final class App {
      * @param args The arguments of the program.
      */
     public static void main(String[] args) {
-        System.out.println("Hello World!");
+        //System.out.println("Hello World!");
+    Jeu jeu = new Jeu();
+    jeu.leNomDuJoueur();
+    jeu.debut();
+    jeu.corpDuJeu();
+    jeu.choisirUneLettre(); 
+    jeu.jouerUneLettre();
+    jeu.recommencer();
+    jeu.victoire();
+
     }
+
+
 }
